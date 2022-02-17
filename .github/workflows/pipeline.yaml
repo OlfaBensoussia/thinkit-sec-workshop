@@ -11,6 +11,7 @@ jobs:
       - run: yarn
       - run: yarn test
   Static-analysis:
+    needs: Build-And-Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,7 +21,7 @@ jobs:
       - run: yarn
       - run: yarn audit
   Deploy:
-    needs: Build-And-Test
+    needs: Static-analysis
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
