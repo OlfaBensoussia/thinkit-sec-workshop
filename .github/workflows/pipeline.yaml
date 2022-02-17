@@ -30,3 +30,19 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: devsec-repo-test
           heroku_email: olfabens23@gmail.com
+  zap_scan:
+    needs: Deploy
+    runs-on: ubuntu-latest
+    name: Scan the webapplication
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: ZAP Scan
+        uses: zaproxy/action-full-scan@v0.3.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          docker_name: "owasp/zap2docker-stable"
+          target: "https://akrem-ncsc.herokuapp.com"
+          rules_file_name: "rules.tsv"
+          fail_action: true
+          cmd_options: "-a -i"
