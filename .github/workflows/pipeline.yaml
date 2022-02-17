@@ -42,7 +42,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           docker_name: "owasp/zap2docker-stable"
-          target: "https://akrem-ncsc.herokuapp.com"
+          target: "https://devsec-repo-test.herokuapp.com"
           rules_file_name: "rules.tsv"
           fail_action: true
           cmd_options: "-a -i"
