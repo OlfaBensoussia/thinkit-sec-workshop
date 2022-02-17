@@ -1,0 +1,17 @@
+{
+  "name": "thinkit-sec-workshop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "repository": "git@github.com:OlfaBensoussia/thinkit-sec-workshop.git",
+  "author": "Olfa Ben-Soussia <Olfa.Ben-Soussia@partner.bmwgroup.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3",
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2"
+  }
+}
